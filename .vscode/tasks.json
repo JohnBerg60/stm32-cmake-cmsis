@@ -1,0 +1,84 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "ninja",
+            "options": {
+                "cwd": "./build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "ninja",
+            "options": {
+                "cwd": "./build"
+            },
+            "args": [
+                "clean"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "flash",
+            "type": "shell",
+            "command": "st-flash",
+            "options": {
+                "cwd": "./build"
+            },
+            "args": [
+                "write",
+                "firmware.bin",
+                "0x8000000"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "info",
+            "type": "shell",
+            "command": "st-info",
+            "args": [
+                "--probe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "monitor",
+            "type": "shell",
+            "command": "termite",
+            "args": [
+                "-serial COM4 -sercfg 115200"
+            ]
+        },
+        {
+            "label": "debug-make",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

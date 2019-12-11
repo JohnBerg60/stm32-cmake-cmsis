@@ -1,0 +1,22 @@
+{
+    "env": {
+        "stm32.family": "STM32F1",
+        "stm32.cpu": "STM32F103xB"
+    },
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "${stm32.cpu}"
+            ],
+            "compilerPath": "D:/Dev-Tools/gcc-arm-8/bin/arm-none-eabi-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,3 @@
+[submodule "cmsis"]
+	path = cmsis
+	url = https://github.com/JBerg60/stm32-cmsis
