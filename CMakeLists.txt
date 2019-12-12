@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.16)
 project(firmware C CXX ASM)
 
 add_definitions(-DSTM32F103xB)
@@ -15,7 +15,7 @@ set(CFDEBUG "-O0 -g")
 
 include(cmake/cmsis.cmake)
 
-file(GLOB SOURCE_FILES "src/*.c" "src/*.cpp" "*.s")
+file(GLOB SOURCE_FILES CONFIGURE_DEPENDS "src/*.c" "src/*.cpp" "*.s")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CFDEBUG} ${CFCOMMON} -fno-exceptions")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CFDEBUG} ${CFCOMMON}")
